@@ -60,3 +60,9 @@ a:visited {
     color: white;
     text-decoration: none;
 }
+
+.albumtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
