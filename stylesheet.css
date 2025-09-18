@@ -66,3 +66,32 @@ a:visited {
     justify-content: center;
     align-items: center;
 }
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact > h1 {
+    margin: 0;
+    margin-bottom: 24px;
+}
+
+.well {
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    padding: 10px;
+}
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+  .nav > li:hover {
+    background-color: rgb(225, 225, 225);
+  }
