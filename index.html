@@ -11,30 +11,30 @@
         <link rel="icon" type="image/x-icon" href="favicon.png">
         <script>
         $(document).ready(function(){
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
 
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
+                    var hash = this.hash;
 
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-            scrollTop: $(hash).offset().top
-            }, 350, function(){
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
+                    $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                    }, 350, function(){
+                        window.location.hash = hash;
+                    });
+                }
             });
-            } // End if
-        });
+            $(window).scroll(function() {
+                $(".slideanim").each(function(){
+                    var pos = $(this).offset().top;
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
         })
+
         </script>
     </head>
     <body>
@@ -51,7 +51,7 @@
             </div>
         </nav>
         <div class="container-fluid">
-            <div class="row well well-lg">
+            <div class="row well well-lg slideanim">
                 <div class="col-sm-2">
                     <img src="osbadge.jpg">
                 </div>
@@ -62,13 +62,13 @@
                     <p class="text-muted"><b>Cookies:</b> we do not track your browsing with cookies.</p>
                 </div>
             </div>
-            <div class="row images well well-lg">
+            <div class="row images well well-lg slideanim">
                 <div class="col-sm-12 well well-lg text-center imagerow" style="background-color: rgb(235, 235, 235);">
                     <img src="bus.jpg" width="500px">
                     <img src="eight_seats.jpg" width="500px">
                 </div>
             </div>
-            <div class="row well well-lg">
+            <div class="row well well-lg slideanim">
                 <div class="col-sm-2">
                     <img src="trainicon.png" width="100px">
                 </div>
@@ -80,7 +80,7 @@
                     </button>
                 </div>
             </div>
-            <div class="well well-lg" style="padding: 0; margin: 0;">
+            <div class="well well-lg slideanim" style="padding: 0; margin: 0;">
                 <div class="row albumtitle">
                     <h1 class="text-primary" id="photoalbum"><b>Photo Album</b></h1>
                 </div>
@@ -179,7 +179,7 @@
                     <div class="col-sm-1"></div>
                 </div>
             </div>
-            <div class="well well-lg">
+            <div class="well well-lg slideanim">
                 <div class="row">
                     <div class="col-sm-12 contact">
                         <h1 class="text-primary" id="contactus"><b>Contact Us</b></h1>
